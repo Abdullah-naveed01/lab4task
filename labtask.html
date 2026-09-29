@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lab Task 2 - All 8 Questions</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='12' fill='%23ffffff22'/%3E%3C/svg%3E")
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: Poppins, Arial, sans-serif;
+            margin: 0;
+            background: #eef1f5;
+            color: #222
+        }
+
+        .q {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px #0002
+        }
+
+        .q>h2 {
+            background: #2c3e50;
+            color: #fff;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-size: 1.1rem
+        }
+
+        form label {
+            display: block;
+            margin: 10px 0 3px;
+            font-weight: 600
+        }
+
+        form input:not([type=radio]):not([type=checkbox]),
+        form select,
+        form textarea {
+            width: 100%;
+            max-width: 420px;
+            padding: 7px;
+            border: 1px solid #999;
+            border-radius: 4px
+        }
+
+        form fieldset {
+            max-width: 420px;
+            margin-top: 10px
+        }
+
+        form fieldset label {
+            display: inline;
+            font-weight: 400
+        }
+
+        button {
+            padding: 8px 18px;
+            margin: 12px 6px 0 0;
+            border: 0;
+            border-radius: 4px;
+            background: #2c7be5;
+            color: #fff;
+            cursor: pointer
+        }
+
+        button[type=reset] {
+            background: #777
+        }
+
+        /* Q4 */
+        #myHeader {
+            background: #1abc9c;
+            color: #fff;
+            padding: 15px;
+            text-align: center
+        }
+
+        .q4 nav a {
+            margin-right: 12px
+        }
+
+        .q4 .wrap {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px
+        }
+
+        .q4 main {
+            flex: 3
+        }
+
+        .q4 aside {
+            flex: 1;
+            background: #fdf2c9;
+            padding: 10px
+        }
+
+        .q4 article {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 8px 0
+        }
+
+        .note {
+            background: #ffe3e3;
+            border-left: 4px solid #c0392b;
+            padding: 4px 8px;
+            margin: 4px 0
+        }
+
+        .q4 footer,
+        .q6 footer {
+            background: #333;
+            color: #fff;
+            padding: 8px;
+            text-align: center;
+            margin-top: 10px
+        }
+
+        .hl {
+            background: yellow;
+            font-weight: bold
+        }
+
+        /* Q5 */
+        .q5 .blk {
+            background: #e8f0fe;
+            padding: 8px;
+            margin: 8px 0
+        }
+
+        /* Q6 */
+        .q6 header {
+            font-family: 'Playfair Display', serif;
+            background: #5b2a86;
+            color: #fff;
+            text-align: center;
+            padding: 12px
+        }
+
+        .nav {
+            background: #333;
+            padding: 8px;
+            text-align: center
+        }
+
+        .nav a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none
+        }
+
+        .books {
+            column-count: 3;
+            column-gap: 12px;
+            margin: 12px 0
+        }
+
+        .card {
+            break-inside: avoid;
+            border: 2px solid #444;
+            border-radius: 12px;
+            padding: 14px;
+            margin-bottom: 12px;
+            text-align: center
+        }
+
+        .card h3 {
+            font-family: 'Playfair Display', serif;
+            margin: 4px 0
+        }
+
+        .b1 {
+            background: #ffe0b2
+        }
+
+        .b2 {
+            background: #c8e6c9
+        }
+
+        .b3 {
+            background: #bbdefb
+        }
+
+        .b4 {
+            background: #f8bbd0
+        }
+
+        .cover {
+            height: 70px;
+            border-radius: 6px;
+            background: #8e44ad;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .faded {
+            opacity: .45
+        }
+
+        .top5 {
+            list-style-type: upper-roman
+        }
+
+        .offers {
+            background: linear-gradient(90deg, #ff512f, #f09819);
+            color: #fff;
+            padding: 14px;
+            border-radius: 8px
+        }
+
+        /* Q7 */
+        .q7 header {
+            font-family: Pacifico, cursive;
+            background: #2c3e50 var(--bg);
+            color: #fff;
+            text-align: center;
+            padding: 30px;
+            font-size: 1.6rem
+        }
+
+        .q7 .layout {
+            display: flex;
+            gap: 12px;
+            margin-top: 10px
+        }
+
+        .q7 main {
+            flex: 3
+        }
+
+        .q7 aside {
+            flex: 1;
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 6px
+        }
+
+        .skills {
+            background: linear-gradient(135deg, #43cea2, #185a9d);
+            color: #fff;
+            padding: 12px 12px 12px 34px;
+            border-radius: 6px;
+            list-style: "✔ "
+        }
+
+        .proj {
+            display: inline-block;
+            position: relative;
+            width: 170px;
+            height: 110px;
+            margin: 10px 8px 0 0;
+            background: #dfe6e9;
+            border-radius: 6px;
+            padding: 30px 8px 8px;
+            vertical-align: top
+        }
+
+        .tag {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #e74c3c;
+            color: #fff;
+            padding: 3px 8px;
+            font-size: .75rem;
+            border-radius: 6px 0 6px 0
+        }
+
+        .pic {
+            width: 100%;
+            max-width: 220px;
+            height: 80px;
+            background: linear-gradient(45deg, #f39c12, #8e44ad);
+            opacity: .5;
+            border-radius: 6px
+        }
+
+        /* Q8 */
+        .q8 h1,
+        .q8 h2,
+        .q8 h3 {
+            font-family: 'Playfair Display', serif
+        }
+
+        .q8 .top {
+            background: #111;
+            color: #fff;
+            padding: 10px 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center
+        }
+
+        .q8 .banner {
+            background: linear-gradient(rgba(0, 0, 0, .5), rgba(20, 30, 90, .6)), var(--bg), #345;
+            color: #fff;
+            text-align: center;
+            padding: 40px 10px;
+            position: relative;
+            z-index: 1
+        }
+
+        .q8 .banner h2 {
+            margin: 0
+        }
+
+        .q8 .cols {
+            display: flex;
+            gap: 12px;
+            margin-top: 12px
+        }
+
+        .q8 .side {
+            flex: 1;
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 6px
+        }
+
+        .q8 .side ul {
+            list-style: square inside;
+            padding: 0
+        }
+
+        .q8 .prods {
+            flex: 4
+        }
+
+        .pc {
+            display: inline-block;
+            position: relative;
+            width: calc(33% - 8px);
+            min-width: 140px;
+            margin: 0 4px 10px;
+            background: #fafafa;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 8px;
+            vertical-align: top;
+            text-align: center
+        }
+
+        .pc .img {
+            height: 80px;
+            border-radius: 6px;
+            background: linear-gradient(120deg, #16a085, #2980b9);
+            opacity: .6;
+            transition: .3s
+        }
+
+        .pc:hover .img {
+            opacity: 1
+        }
+
+        .lbl {
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            background: #e74c3c;
+            color: #fff;
+            font-size: .7rem;
+            padding: 2px 7px;
+            border-radius: 4px;
+            z-index: 5
+        }
+
+        .q8 footer {
+            background: #111;
+            color: #fff;
+            text-align: center;
+            padding: 8px;
+            margin-top: 10px
+        }
+
+        @media(max-width:800px) {
+            .books {
+                column-count: 2
+            }
+
+            .q4 .wrap,
+            .q7 .layout,
+            .q8 .cols {
+                flex-direction: column
+            }
+
+            .pc {
+                width: calc(50% - 8px)
+            }
+        }
+
+        @media(max-width:500px) {
+            .books {
+                column-count: 1
+            }
+
+            .pc {
+                width: 100%
+            }
+
+            .nav a {
+                display: block;
+                margin: 6px
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ============ Q1 ============ -->
+    <section class="q" id="q1">
+        <h2>Question 1: Job Application Portal</h2>
+        <form action="#" method="post">
+            <label for="n1">Applicant Name</label><input id="n1" type="text" required>
+            <label for="e1">Email</label><input id="e1" type="email" required>
+            <label for="p1">Phone Number</label><input id="p1" type="tel" placeholder="03XX-XXXXXXX">
+            <label for="pw1">Password</label><input id="pw1" type="password" minlength="6" required>
+            <fieldset>
+                <legend>Gender</legend>
+                <label><input type="radio" name="g1" value="M"> Male</label>
+                <label><input type="radio" name="g1" value="F"> Female</label>
+                <label><input type="radio" name="g1" value="O"> Other</label>
+            </fieldset>
+            <label for="ql1">Qualification</label>
+            <input id="ql1" type="text" placeholder="e.g. BS Computer Science">
+            <label for="jp1">Job Position</label>
+            <select id="jp1">
+                <option value="">-- Select --</option>
+                <option>Web Developer</option>
+                <option>Software Engineer</option>
+                <option>Data Analyst</option>
+                <option>UI/UX Designer</option>
+            </select>
+            <label for="c1">City</label>
+            <input id="c1" list="cities" placeholder="Choose or type a city">
+            <datalist id="cities">
+                <option value="Abbottabad">
+                <option value="Islamabad">
+                <option value="Lahore">
+                <option value="Karachi">
+                <option value="Peshawar">
+            </datalist>
+            <label for="s1">Expected Salary</label><input id="s1" type="number" min="0" step="1000">
+            <label for="d1">Available Date</label><input id="d1" type="date">
+            <label for="cv1">Upload CV</label><input id="cv1" type="file" accept=".pdf,.doc,.docx">
+            <label for="cl1">Cover Letter</label><textarea id="cl1" rows="5"></textarea>
+            <button type="submit">Submit</button><button type="reset">Reset</button>
+        </form>
+    </section>
+
+    <!-- ============ Q2 ============ -->
+    <section class="q" id="q2">
+        <h2>Question 2: Online Event Registration (Music Festival)</h2>
+        <form action="#" method="post">
+            <label for="n2">Participant Name</label><input id="n2" type="text" required>
+            <label for="e2">Email</label><input id="e2" type="email" required>
+            <label for="p2">Phone</label><input id="p2" type="tel">
+            <fieldset>
+                <legend>Gender</legend>
+                <label><input type="radio" name="g2"> Male</label>
+                <label><input type="radio" name="g2"> Female</label>
+                <label><input type="radio" name="g2"> Other</label>
+            </fieldset>
+            <label for="t2">Ticket Type</label>
+            <select id="t2">
+                <option>Standard</option>
+                <option>VIP</option>
+                <option>Backstage</option>
+            </select>
+            <label for="k2">Number of Tickets</label><input id="k2" type="number" min="1" max="10" value="1">
+            <label for="d2">Preferred Event Date</label><input id="d2" type="date">
+            <label for="tm2">Preferred Time</label><input id="tm2" type="time">
+            <fieldset>
+                <legend>Food Preference</legend>
+                <label><input type="radio" name="f2" value="veg"> Vegetarian</label>
+                <label><input type="radio" name="f2" value="non"> Non-Vegetarian</label>
+                <label><input type="radio" name="f2" value="none"> No Food</label>
+            </fieldset>
+            <fieldset>
+                <legend>Additional Facilities</legend>
+                <label><input type="checkbox"> Parking</label>
+                <label><input type="checkbox"> Shuttle</label>
+                <label><input type="checkbox"> Merchandise Pack</label>
+                <label><input type="checkbox"> Wheelchair Access</label>
+            </fieldset>
+            <label for="id2">Upload Identification Document</label><input id="id2" type="file" accept="image/*,.pdf">
+            <label for="cm2">Comments</label><textarea id="cm2" rows="4"></textarea>
+            <button type="submit">Submit</button><button type="reset">Reset</button>
+        </form>
+    </section>
+
+    <!-- ============ Q3 ============ -->
+    <section class="q" id="q3">
+        <h2>Question 3: Digital Media Creator Showcase</h2>
+        <h3>Video Reel</h3>
+        <video width="640" height="360" controls loop muted poster="images/poster.jpg" style="max-width:100%">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+            Your browser does not support the video tag.
+        </video>
+        <h3>Podcast Teaser</h3>
+        <audio controls autoplay loop>
+            <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+            <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+            Your browser does not support the audio element.
+        </audio>
+        <p><small>Note: browsers may block autoplay until you interact with the page.</small></p>
+        <h3>Location Map</h3>
+        <iframe
+            src="https://www.openstreetmap.org/export/embed.html?bbox=73.19%2C34.13%2C73.25%2C34.17&amp;layer=mapnik"
+            width="600" height="350" style="border:3px solid #2c3e50;max-width:100%" title="Map"></iframe>
+    </section>
+
+    <!-- ============ Q4 ============ -->
+    <section class="q q4" id="q4">
+        <h2>Question 4: Semantic Tech Blog Layout</h2>
+        <header id="myHeader">
+            <h1>TechPulse Blog</h1>
+            <p>News, tutorials and <span class="hl">reviews</span> for developers.</p>
+        </header>
+        <nav><a href="#">Home</a><a href="#">Articles</a><a href="#">Reviews</a><a href="#">About</a></nav>
+        <div class="wrap">
+            <main>
+                <section>
+                    <h2>Latest in Web Development</h2>
+                    <article>
+                        <h3>Why Semantic HTML Matters</h3>
+                        <p>Semantic tags help <span class="hl">screen readers</span> and search engines understand
+                            structure. This <span class="note">inline span</span> sits inside a paragraph, while the
+                            paragraph itself is block-level.</p>
+                        <div class="note">Block-level div using the shared "note" class.</div>
+                    </article>
+                    <article>
+                        <h3>Getting Started with CSS Grid</h3>
+                        <p>Grid makes two-dimensional layouts simple and <span class="note">maintainable</span>.</p>
+                    </article>
+                </section>
+                <section>
+                    <h2>Gadget Reviews</h2>
+                    <article>
+                        <h3>Top Laptops of the Year</h3>
+                        <p>A comparison of performance and battery life.</p>
+                        <div class="note">Another div reusing the same class.</div>
+                    </article>
+                </section>
+            </main>
+            <aside>
+                <h3>Advertisement</h3>
+                <p>Learn coding online - 20% off!</p><span class="note">Sponsored</span>
+            </aside>
+        </div>
+        <footer>&copy; 2026 TechPulse. All rights reserved.</footer>
+    </section>
+
+    <!-- ============ Q5 ============ -->
+    <section class="q q5" id="q5">
+        <h2>Question 5: Educational Portal Dashboard</h2>
+        <h3>Virtual Campus Map</h3>
+        <iframe
+            src="https://www.openstreetmap.org/export/embed.html?bbox=73.20%2C34.14%2C73.24%2C34.16&amp;layer=mapnik"
+            width="600" height="320" frameborder="1" align="middle" style="max-width:100%" title="Campus map"></iframe>
+        <h3>Assignment Submission</h3>
+        <form action="#" method="post">
+            <label for="f5">Upload Assignment (PDF, DOC, DOCX only)</label>
+            <input id="f5" type="file" accept=".pdf,.doc,.docx">
+            <label for="t5">Instructions / Notes</label>
+            <textarea id="t5"
+                rows="5">Please write your name and roll number at the top of your file. Submit before the deadline. Late submissions will lose marks.</textarea>
+            <button type="submit">Submit Assignment</button>
+        </form>
+        <h3>Block vs Inline Demonstration</h3>
+        <div class="blk">This is a block-level <b>div</b>. It starts on a new line and stretches to full width.</div>
+        <p>This paragraph is block-level too, with <span style="background:orange;font-weight:bold">an inline
+                span</span> and <span style="background:lightgreen;padding:0 4px">another span</span>. They take only
+            the width they need and do not break the line.</p>
+        <p>Second paragraph: a <span style="color:crimson;font-weight:600">red inline phrase</span> inside normal text.
+        </p>
+    </section>
+
+    <!-- ============ Q6 ============ -->
+    <section class="q q6" id="q6">
+        <h2>Question 6: Online Book Store</h2>
+        <header>
+            <h1 style="margin:0">BookNest Online Store</h1>
+        </header>
+        <div class="nav"><a href="#">Home</a><a href="#">Books</a><a href="#">Categories</a><a href="#">Offers</a><a
+                href="#">Contact</a></div>
+        <div class="books">
+            <div class="card b1">
+                <div class="cover">Cover</div>
+                <h3>The Silent River</h3>
+                <p>Fiction - $12</p>
+            </div>
+            <div class="card b2">
+                <div class="cover">Cover</div>
+                <h3>Learn Python</h3>
+                <p>Technology - $25</p>
+            </div>
+            <div class="card b3">
+                <div class="cover">Cover</div>
+                <h3>Ocean Secrets</h3>
+                <p>Science - $18</p>
+            </div>
+            <div class="card b4">
+                <div class="cover">Cover</div>
+                <h3>Ancient Empires</h3>
+                <p>History - $20</p>
+            </div>
+            <div class="card b1">
+                <div class="cover">Cover</div>
+                <h3>Healthy Living</h3>
+                <p>Lifestyle - $15</p>
+            </div>
+            <div class="card b2">
+                <div class="cover">Cover</div>
+                <h3>Poems of Dawn</h3>
+                <p>Poetry - $10</p>
+            </div>
+        </div>
+        <h3>Top 5 Best-Selling Books</h3>
+        <ol class="top5">
+            <li>The Silent River</li>
+            <li>Learn Python</li>
+            <li>Ancient Empires</li>
+            <li>Ocean Secrets</li>
+            <li>Healthy Living</li>
+        </ol>
+        <div class="offers">
+            <h3>Special Offers</h3>
+            <p>Get up to 40% off on selected books!</p>
+            <div class="cover faded" style="width:140px">Discounted Book</div>
+        </div>
+        <footer>&copy; 2026 BookNest</footer>
+    </section>
+
+    <!-- ============ Q7 ============ -->
+    <section class="q q7" id="q7">
+        <h2>Question 7: Personal Portfolio Website</h2>
+        <header>Ali Khan - CS Student</header>
+        <div class="nav"><a href="#">Home</a><a href="#">About</a><a href="#">Skills</a><a href="#">Projects</a><a
+                href="#">Contact</a></div>
+        <div class="layout">
+            <main>
+                <h3>About Me</h3>
+                <p>I am a Computer Science student passionate about web development and problem solving.</p>
+                <div class="pic"></div>
+                <h3>Skills</h3>
+                <ul class="skills">
+                    <li>HTML &amp; CSS</li>
+                    <li>JavaScript</li>
+                    <li>Python</li>
+                    <li>C++</li>
+                </ul>
+                <h3>Projects</h3>
+                <div class="proj"><span class="tag">Web</span>Portfolio Site</div>
+                <div class="proj"><span class="tag">Python</span>Library System</div>
+                <div class="proj"><span class="tag">C++</span>Bank Manager</div>
+            </main>
+            <aside>
+                <h3>Contact</h3>
+                <p>ali@example.com</p>
+                <p>Abbottabad, Pakistan</p>
+            </aside>
+        </div>
+    </section>
+
+    <!-- ============ Q8 ============ -->
+    <section class="q q8" id="q8">
+        <h2>Question 8: E-Commerce Product Website</h2>
+        <div class="top">
+            <h1 style="margin:0;font-size:1.4rem">ShopEasy</h1>
+            <div class="nav" style="background:none;padding:0"><a href="#">Home</a><a href="#">Shop</a><a
+                    href="#">Deals</a><a href="#">Contact</a></div>
+        </div>
+        <div class="banner">
+            <h2>Mega Sale - Up to 50% Off</h2>
+            <p>Shop the latest products today</p>
+        </div>
+        <div class="cols">
+            <aside class="side">
+                <h3>Categories</h3>
+                <ul>
+                    <li>Electronics</li>
+                    <li>Fashion</li>
+                    <li>Home</li>
+                    <li>Sports</li>
+                    <li>Books</li>
+                </ul>
+            </aside>
+            <div class="prods">
+                <div class="pc"><span class="lbl">New</span>
+                    <div class="img"></div>
+                    <h3>Headphones</h3>
+                    <p>$45</p>
+                </div>
+                <div class="pc"><span class="lbl">Sale</span>
+                    <div class="img"></div>
+                    <h3>Smart Watch</h3>
+                    <p>$80</p>
+                </div>
+                <div class="pc"><span class="lbl">Hot</span>
+                    <div class="img"></div>
+                    <h3>Backpack</h3>
+                    <p>$35</p>
+                </div>
+                <div class="pc"><span class="lbl">New</span>
+                    <div class="img"></div>
+                    <h3>Sneakers</h3>
+                    <p>$60</p>
+                </div>
+                <div class="pc"><span class="lbl">Sale</span>
+                    <div class="img"></div>
+                    <h3>Desk Lamp</h3>
+                    <p>$22</p>
+                </div>
+                <div class="pc"><span class="lbl">Hot</span>
+                    <div class="img"></div>
+                    <h3>Speaker</h3>
+                    <p>$55</p>
+                </div>
+            </div>
+        </div>
+        <footer>&copy; 2026 ShopEasy. All rights reserved.</footer>
+    </section>
+
+</body>
+
+</html>
